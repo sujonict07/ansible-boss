@@ -18,7 +18,9 @@ exit
 # step 3 
 cp -R /etc/ansible/ myplatform
 cd myplatform
-ll
+# to show list in current directory
+ls -lha
+
 vim ansible.cfg
 # Update line : 
 # inventory      = /etc/ansible/hosts to inventory      = hosts
@@ -35,3 +37,8 @@ vim hosts
    2. ansible -m shell -a 'hostname' all   
    3.  ansible -m shell -a 'df -h' all
    4.  ansible -m shell -a 'whoami' all
+   5. ansible -b -K -m user -a "name=testuser" all
+   6. ansible -m shell -a 'getent passwd |grep testuser' all
+   7. ansible -b -K -m user -a "name=testuser state=absent" all
+
+
