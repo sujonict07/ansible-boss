@@ -1,0 +1,11 @@
+- name: "Installing requests"
+  apt: pkg={{ item }}python-requests state=installed
+  with_items:
+  - dnsutils
+  - git
+  - vim
+  - at
+  - ntp
+  - at
+- name: "adding bashrc"
+  copy: src='' owner=root group=root mode=0644
