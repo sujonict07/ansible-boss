@@ -7,3 +7,6 @@ vim roles/basic/tasks/main.yml
 - name: "Installing requests"
   apt: pkg=python-requests state=installed
 
+Run Command:
+  ansible-playbook -K playbook.yml
+  
